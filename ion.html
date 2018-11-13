@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>IMG</title>
+<style>
+body{text-align:center;margin:0;background-color:silver;}
+p{font-family:monospace;}
+div{position:fixed;left:0px;top:0px;}
+input{font-size:72pt}
+</style>
+</head>
+<script language=JavaScript>
+var cnt=0; var rnd;
+function pth() {rnd=String(Math.random()).substr(2,8); document.frm.btn.value=(++cnt); document.title=rnd; return "http://i.on.ru/upfoto/"+rnd.substr(5,3)+"/"+rnd+".jpg";}
+function sim() {document.img.src=pth(); document.getElementById("ref").innerHTML="[::f"+rnd+"::]"; document.frm.btn.focus();}
+</script>
+<body onload="sim()">
+<div><form name=frm><input type=button name=btn onClick="cnt=0;sim()"></form></div>
+<img name=img onError="sim()">
+<p id=ref></p>
+</body>
+</html>
